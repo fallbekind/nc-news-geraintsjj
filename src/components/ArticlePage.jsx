@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-import { getArticleById } from '../api';
-import { useParams } from 'react-router-dom';
+import { getArticleById } from '../api'
+import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const ArticlePage = () => {
 
@@ -27,13 +28,17 @@ const ArticlePage = () => {
         <>
         <div className='article-page' key={article.article_id} > 
             <img src={article.article_img_url} alt='article-image' id='article-image' />
-            <h2 id='article-title'>{article.title}</h2>
+            <h1 id='article-title'>{article.title}</h1>
 
-            <h3 id='article-author'>{article.author}</h3>
-            <h3 id='article-topic'>{article.topic}</h3> 
-            <h3 id='article-date'>{date}</h3>
+            <h3 id='article-author'>Author: {article.author}</h3>
+            <h3 id='article-topic'>Topic: {article.topic}</h3> 
+            <h3 id='article-date'>Date: {date}</h3>
 
             <p id='article-body'>{article.body}</p>
+
+            <Link to={`/articles/${article.article_id}/comments`} > 
+                    <button id='article-comments-button'>See comments</button>
+            </Link>
         </div>
         </>
     );
