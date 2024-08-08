@@ -13,7 +13,7 @@ const ArticleComments = () => {
     useEffect(() => {
 
         getArticleComments(article_id).then((response) => {
-            console.log(response.comments)
+    
             setArticleComments(response.comments);
             setIsLoading(false);
         });

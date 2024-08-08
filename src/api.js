@@ -20,5 +20,17 @@ const getArticleComments = (article_id) => {
     });
 };
 
-export { getAllArticles, getArticleById, getArticleComments }
+const getArticleVotes = (article_id) => {
+    return api.get(`/articles/${article_id}`).then(({ data }) => {
+        return data;
+    });
+};
+
+const postVote = (article_id) => {
+    return api.post(`/articles/${article_id}`).then(({ data }) => {
+        return data;
+    });
+}
+
+export { getAllArticles, getArticleById, getArticleComments, getArticleVotes, postVote }
 
