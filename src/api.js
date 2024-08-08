@@ -27,7 +27,7 @@ const getArticleVotes = (article_id) => {
 };
 
 const postVote = (article_id) => {
-    return api.post(`/articles/${article_id}`).then(({ data }) => {
+    return api.patch(`/articles/${article_id}/votes`).then(({ data }) => {
         return data;
     });
 }

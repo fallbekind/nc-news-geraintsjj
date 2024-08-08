@@ -1,4 +1,4 @@
-.article {
+.article-list {
     padding: 20px;
     margin: 50px;
     display: flex;
@@ -14,7 +14,7 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-#article-button {
+#article-list-button {
     border-radius: 10px;
     max-width: 420px;
     flex-grow: 1;

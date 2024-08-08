@@ -1,10 +1,9 @@
 import './App.css'
-
 import { Routes, Route } from 'react-router-dom'
+
 import ArticleList from './components/ArticleList'
 import ArticlePage from './components/ArticlePage'
 import ArticleComments from './components/ArticleComments'
-import ArticleVotes from './components/ArticleVotes'
 
 function App() {
   return (
