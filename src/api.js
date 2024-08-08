@@ -26,11 +26,11 @@ const getArticleVotes = (article_id) => {
     });
 };
 
-const postVote = (article_id) => {
-    return api.patch(`/articles/${article_id}/votes`).then(({ data }) => {
+const patchVote = (article_id) => {
+    return api.patch(`/articles/${article_id}`, {alt_votes: 1}).then(({ data }) => {
         return data;
     });
 }
 
-export { getAllArticles, getArticleById, getArticleComments, getArticleVotes, postVote }
+export { getAllArticles, getArticleById, getArticleComments, getArticleVotes, patchVote }
 

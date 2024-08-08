@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getArticleVotes } from '../api';
+import { getArticleVotes, patchVote } from '../api';
 
 const ArticleVotes = () => {
     
@@ -21,7 +21,7 @@ const ArticleVotes = () => {
         setArticleVotes((articleVotes) => articleVotes + 1);
 
         setError(null);
-        postVote().catch((err) => {
+        patchVote(article_id).catch((err) => {
             setArticleVotes((articleVotes) => articleVotes - 1);
         });
     };
@@ -35,11 +35,3 @@ const ArticleVotes = () => {
 };
 
 export default ArticleVotes
-
-// const handleVote = () => {
-//     setArticleVotes((currentArticleVotes) => currentArticleVotes + 1);
-//     setError(null);
-//     postVote().catch((err) => {
-//         setArticleVotes((currentArticleVotes) => currentArticleVotes -1);
-//     });
-// };
