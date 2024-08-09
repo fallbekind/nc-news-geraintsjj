@@ -12,12 +12,12 @@ const ArticleVotes = () => {
 
     useEffect(() => {
         getArticleVotes(article_id).then((response) => {
-            console.log(response.article.votes)
             setArticleVotes(response.article.votes);
         });
     }, []);
 
-    const handleVote = () => {
+    const handlePatchVote = () => {
+        
         setArticleVotes((articleVotes) => articleVotes + 1);
 
         setError(null);
@@ -27,7 +27,7 @@ const ArticleVotes = () => {
     };
     return (
         <div>
-            <button onClick={ handleVote }>Vote</button>
+            <button onClick={ handlePatchVote }>Vote</button>
             {error ? <p>{error}</p> : null}
             <p>{articleVotes} Votes</p>
         </div>
