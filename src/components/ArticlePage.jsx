@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { getArticleById } from '../api'
-import ArticleVotes from './ArticleVotes'
+import ArticleVotes from './PatchVotes'
 
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
@@ -42,7 +42,8 @@ const ArticlePage = () => {
                     <button id='article-comments-button'>See comments</button>
             </Link>
 
-            <ArticleVotes />
+            <ArticleVotes/>
+            
         </div>
         </>
     );
